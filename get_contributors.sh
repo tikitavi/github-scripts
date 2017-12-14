@@ -1,7 +1,8 @@
 #!/bin/bash -e
 
-username=$1
-password=$2
+filename=$1
+username=$2
+password=$3
 
 if [[ $password ]] ; then
   github_login="-u $username:$password"
@@ -24,5 +25,4 @@ while read LINE ; do
       echo $NUMOFLINES
       let i=i+1
     done
-    
-done < ./repos
+done < $filename
